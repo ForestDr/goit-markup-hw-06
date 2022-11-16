@@ -18,6 +18,9 @@
     --primary-color: #212121;
     --secondary-color: #757575;
 
+    --text-color-form: rgba(117, 117, 117, 0.5);
+    --icon-color-form: #000000;
+
     --icons-color: #afb1b8;
     --icons-bg-color:rgba(255, 255, 255, 0.1);
 
@@ -87,7 +90,6 @@ p {
 /* Хедр  */
 
 .page-header {
-    /* !? */
     position: fixed;
     z-index: 1;
     top: 0;
@@ -97,7 +99,6 @@ p {
     min-height: 80px;
 
     background-color: var(--primary-bg-color);
-    /* !? */
 
     border-bottom: 1px solid #ececec;
 }
@@ -105,10 +106,8 @@ p {
 .page-header-container {
     display: flex;
 
-    /* !? */
     align-items: center;
     height: 100%;
-    /* !? */
 }
 
 /* Логотип */
@@ -570,6 +569,74 @@ p {
     color: var(--secondary-accent-color);
 }
 
+/* Форма в футері  */
+
+.footer-form-container {
+    margin-left: auto;
+}
+
+.footer-form {
+    display: flex;
+    align-items: center;
+}
+
+.footer-field-input {
+    display: inline-block;
+    padding: 15px 16px;
+    width: 358px;
+    height: 50px;
+
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: var(--adress-contact-color);
+
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.footer-field-input::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: var(--adress-contact-color);
+}
+
+.form-btn {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    padding: 10px 28px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--secondary-accent-color);
+
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    transition: background-color var(--duration) var(--timing-function);
+}
+
+.icon-plane {
+    margin-left: 10px;
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    background-color: var(--accent-hero-btn-bg-color);
+}
+
+.form-btn:hover {
+    cursor: pointer;
+}
+
 /* Портфоліо */
 
 .filter {
@@ -706,9 +773,7 @@ p {
 
 .backdrop {
     position: fixed;
-    /* !? */
     z-index: 2;
-    /* !? */
     top: 0;
     left: 0;
 
@@ -735,6 +800,7 @@ p {
     top: 50%;
     left: 50%;
 
+    padding: 40px;
     min-width: 528px;
     min-height: 581px;
 
@@ -762,5 +828,129 @@ p {
 
 .close-btn {
     cursor: pointer;
-    color: #000000;
+    color: var(--icon-color-form);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+}
+
+/* Форма  в модальному вікні*/
+
+.modal-form {
+    width: 448px;
+}
+
+.modal-form > .title {
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--primary-color);
+}
+
+.modal-form-field {
+    position: relative;
+}
+
+.modal-form-field {
+    margin-bottom: 10px;
+}
+
+.modal-field-label {
+    margin-bottom: 4px;
+    color: var(--secondary-color);
+}
+
+.modal-field-label,
+.modal-field-input,
+.comment,
+.comment::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+}
+
+.modal-field-input {
+    display: block;
+    padding: 11px 12px 11px 42px;
+    height: 40px;
+}
+
+.modal-field-input,
+.comment {
+    width: 100%;
+
+    color: var(--text-color-form);
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.modal-field-input:focus,
+.comment:focus {
+    outline: 1px solid var(--accent-color);
+}
+
+.modal-field-icon {
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+
+    fill: var(--icon-color-form);
+}
+
+.modal-field-input:focus + .modal-field-icon {
+    fill: var(--accent-color);
+}
+
+.comment {
+    display: block;
+    padding: 12px 16px;
+    height: 120px;
+    margin-bottom: 20px;
+
+    resize: none;
+}
+
+.comment::placeholder {
+    color: var(--text-color-form);
+}
+
+.checkbox {
+    appearance: none;
+    position: absolute;
+}
+
+.field-policy{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.icon-checked {
+    border: 1.75px solid var(--primary-color);
+    border-radius: 2px;
+}
+
+.checkbox:checked + .icon-checked {
+    background-color: var(--accent-color);
+    border-color: transparent;
+}
+
+.icon-policy {
+    width: 16px;
+    height: 15px;
+
+    border: 1.75px solid var(--primary-color);
+    border-radius: 2px;
+}
+
+.center-btn {
+    margin-left: auto;
+    margin-right: auto;
 }
