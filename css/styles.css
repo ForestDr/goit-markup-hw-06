@@ -129,6 +129,7 @@ p {
     display: inline-block;
     margin-bottom: 20px;
 
+    font-style: normal;
     color: var(--secondary-accent-color);
 }
 
@@ -520,17 +521,23 @@ p {
 .page-footer-container {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
 /* Адреса  */
 
-.addresses-container {
+.page-address{
+    display: flex;
+    align-items: baseline;
+}
+
+.address-contact-container {
     min-width: 231px;
 }
 
-.addresses-list>.item:not(:last-child) {
+.addresses-list > .item:not(:last-child) {
     margin-bottom: 9px;
 }
 
@@ -554,7 +561,7 @@ p {
 .addresses-list .contact:hover,
 .addresses-list .contact:focus {
     color: var(--accent-color);
-}
+} 
 
 /* Контакти в соц мереж футері  */
 
@@ -565,18 +572,15 @@ p {
 .call-to-action {
     margin-bottom: 20px;
 
+    font-style: normal;
     font-weight: 700;
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--secondary-accent-color);
-}
+} 
 
 /* Форма в футері  */
-
-.footer-form-container {
-    margin-left: auto;
-}
 
 .footer-form {
     display: flex;
