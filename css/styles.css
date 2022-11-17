@@ -36,7 +36,7 @@
     --third-bg-color: #f5f4fa;
 
     --primary-btn-color: #f5f4fa;
-    --accent-hero-btn-bg-color: #188ce8;
+    --accent-btn-bg-color: #188ce8;
 
     --duration: 250ms;
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,6 +46,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 1.71;
+    letter-spacing: 0.03em;
     color: var(--primary-color);
 
     background-color: var(--primary-bg-color);
@@ -219,6 +220,33 @@ p {
     background-color: var(--accent-color);
     border-radius: 2px;
 }
+
+/* Кнопки  */
+
+.btn {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--secondary-accent-color);
+    
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    
+    transition: background-color var(--duration) var(--timing-function);
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--accent-btn-bg-color);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
 /* Секція героя */
 
 .hero {
@@ -256,29 +284,6 @@ p {
     margin-right: auto;
     margin-left: auto;
     padding: 10px 32px;
-
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
-    color: var(--secondary-accent-color);
-
-    background-color: var(--accent-color);
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-    transition: background-color var(--duration) var(--timing-function);
-}
-
-.hero-btn:hover,
-.hero-btn:focus {
-    background-color: var(--accent-hero-btn-bg-color);
-}
-
-.hero-btn:hover {
-    cursor: pointer;
 }
 
 /* Секція  */
@@ -335,7 +340,6 @@ p {
 }
 
 .feature-list .descr {
-    letter-spacing: 0.03em;
     color: var(--secondary-color);
 }
 
@@ -535,7 +539,6 @@ p {
     display: inline-block;
 
     font-style: normal;
-    letter-spacing: 0.03em;
 }
 
 .addresses-list .address {
@@ -580,8 +583,12 @@ p {
     align-items: center;
 }
 
+.footer-form-label {
+    margin-right: 12px;
+}
+
 .footer-field-input {
-    display: inline-block;
+    display: block;
     padding: 15px 16px;
     width: 358px;
     height: 50px;
@@ -593,7 +600,7 @@ p {
 
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 }
 
@@ -604,38 +611,216 @@ p {
     color: var(--adress-contact-color);
 }
 
-.form-btn {
+.footer-form-btn {
     display: flex;
     align-items: center;
-    margin-left: 12px;
     padding: 10px 28px;
-
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
-    color: var(--secondary-accent-color);
-
-    background-color: var(--accent-color);
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-    transition: background-color var(--duration) var(--timing-function);
 }
 
 .icon-plane {
     margin-left: 10px;
 }
 
-.form-btn:hover,
-.form-btn:focus {
-    background-color: var(--accent-hero-btn-bg-color);
+/* Модальне вікно  */
+
+.backdrop {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+
+    opacity: 1;
+    transition: opacity var(--duration) var(--timing-function);
 }
 
-.form-btn:hover {
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: 40px;
+    min-width: 528px;
+    min-height: 581px;
+
+    background-color: var(--primary-bg-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--duration) var(--timing-function);
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+
+    color: var(--icon-color-form);
+
+    background-color: var(--primary-bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.close-btn:hover {
     cursor: pointer;
 }
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+}
+
+/* Форма  в модальному вікні*/
+
+.modal-form {
+    width: 448px;
+}
+
+.modal-form > .title {
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--primary-color);
+}
+
+/* Ім'я, телефон, пошта, коментар  */
+
+.modal-form-field {
+    position: relative;
+
+    margin-bottom: 10px;
+}
+
+.modal-field-label {
+    margin-bottom: 4px;
+    color: var(--secondary-color);
+}
+
+.modal-field-label,
+.modal-field-input,
+.comment,
+.comment::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+}
+
+.modal-field-input {
+    display: block;
+    padding: 11px 12px 11px 42px;
+    height: 40px;
+}
+
+.modal-field-input,
+.comment {
+    width: 100%;
+
+    color: var(--text-color-form);
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.modal-field-input:focus,
+.comment:focus {
+    outline: 1px solid var(--accent-color);
+}
+
+.modal-field-icon {
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+
+    fill: var(--icon-color-form);
+
+    pointer-events: none;
+}
+
+.modal-field-input:focus + .modal-field-icon {
+    fill: var(--accent-color);
+}
+
+.comment {
+    display: block;
+    padding: 12px 16px;
+    height: 120px;
+    margin-bottom: 20px;
+
+    resize: none;
+}
+
+.comment::placeholder {
+    color: var(--text-color-form);
+}
+
+/* Умови договору  */
+
+.field-policy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.checkbox {
+    appearance: none;
+    position: absolute;
+}
+
+.icon-checked {
+    margin-right: 7px;
+
+    border: 1.75px solid var(--primary-color);
+
+    border-radius: 2px;
+}
+
+.icon-checked:hover {
+    cursor: pointer;
+}
+
+.checkbox:checked+.icon-checked {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.policy {
+    color: var(--secondary-color);
+}
+
+.policy-link {
+    color: var(--accent-color);
+}
+
+.modal-form-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 52px;
+}   
 
 /* Портфоліо */
 
@@ -648,7 +833,6 @@ p {
 .filter-btn {
     padding: 6px 22px;
 
-    font-family: inherit;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.63;
@@ -769,188 +953,4 @@ p {
 .project-link:hover .project-overlay,
 .project-link:focus .project-overlay {
     transform: translateY(0);
-}
-
-.backdrop {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    
-    background-color: rgba(0, 0, 0, 0.2);;
-
-    opacity: 1;
-    transition: opacity var(--duration) var(--timing-function);
-}
-
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.9);
-}
-
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    padding: 40px;
-    min-width: 528px;
-    min-height: 581px;
-
-    background-color: var(--primary-bg-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform var(--duration) var(--timing-function);
-}
-
-.close-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-
-    padding: 6px;
-    width: 30px;
-    height: 30px;
-
-    background-color: var(--primary-bg-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-}
-
-.close-btn {
-    cursor: pointer;
-    color: var(--icon-color-form);
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: var(--accent-color);
-}
-
-/* Форма  в модальному вікні*/
-
-.modal-form {
-    width: 448px;
-}
-
-.modal-form > .title {
-    margin-top: 0;
-    margin-bottom: 12px;
-
-    font-size: 20px;
-    line-height: 1.15;
-    text-align: center;
-    letter-spacing: 0.03em;
-    color: var(--primary-color);
-}
-
-.modal-form-field {
-    position: relative;
-}
-
-.modal-form-field {
-    margin-bottom: 10px;
-}
-
-.modal-field-label {
-    margin-bottom: 4px;
-    color: var(--secondary-color);
-}
-
-.modal-field-label,
-.modal-field-input,
-.comment,
-.comment::placeholder {
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
-}
-
-.modal-field-input {
-    display: block;
-    padding: 11px 12px 11px 42px;
-    height: 40px;
-}
-
-.modal-field-input,
-.comment {
-    width: 100%;
-
-    color: var(--text-color-form);
-
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-}
-
-.modal-field-input:focus,
-.comment:focus {
-    outline: 1px solid var(--accent-color);
-}
-
-.modal-field-icon {
-    position: absolute;
-    bottom: 11px;
-    left: 12px;
-
-    fill: var(--icon-color-form);
-}
-
-.modal-field-input:focus + .modal-field-icon {
-    fill: var(--accent-color);
-}
-
-.comment {
-    display: block;
-    padding: 12px 16px;
-    height: 120px;
-    margin-bottom: 20px;
-
-    resize: none;
-}
-
-.comment::placeholder {
-    color: var(--text-color-form);
-}
-
-.checkbox {
-    appearance: none;
-    position: absolute;
-}
-
-.field-policy{
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.icon-checked {
-    border: 1.75px solid var(--primary-color);
-    border-radius: 2px;
-}
-
-.checkbox:checked + .icon-checked {
-    background-color: var(--accent-color);
-    border-color: transparent;
-}
-
-.icon-policy {
-    width: 16px;
-    height: 15px;
-
-    border: 1.75px solid var(--primary-color);
-    border-radius: 2px;
-}
-
-.center-btn {
-    margin-left: auto;
-    margin-right: auto;
 }

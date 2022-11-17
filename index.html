@@ -58,7 +58,7 @@
       <!-- герой -->
       <section class="hero">
         <h1 class="hero-title">Ефективні рішення для <br />вашого бізнесу</h1>
-        <button class="hero-btn" data-modal-open type="button">Замовити послугу</button>
+        <button class="btn hero-btn" data-modal-open type="button">Замовити послугу</button>
       </section>
 
       <!-- наші особливості  -->
@@ -453,11 +453,11 @@
           <b class="call-to-action">Підпишіться на розсилку</b>
 
           <form class="footer-form" autocomplete="off">
-            <label>
+            <label class="footer-form-label">
               <input class="footer-field-input" type="email" name="email" placeholder="E-mail" />
             </label>
 
-            <button class="form-btn" type="submit">
+            <button class="btn footer-form-btn" type="submit">
               Підписатися
               <svg class="icon-plane" width="24" height="24">
                 <use href="./images/icons.svg#plane"></use>
@@ -513,10 +513,13 @@
             <svg class="icon-checked" width="16" height="15">
               <use href="./images/icons.svg#checked"></use>
             </svg>
-            <span class="policy">Погоджуюся з розсилкою та приймаю Умови договору</span>
+            <span class="policy"
+              >Погоджуюся з розсилкою та приймаю
+              <a class="policy-link" href="#">Умови договору</a></span
+            >
           </label>
 
-          <button class="form-btn center-btn" type="submit">Відправити</button>
+          <button class="btn modal-form-btn" type="submit">Відправити</button>
         </form>
       </div>
     </div>
