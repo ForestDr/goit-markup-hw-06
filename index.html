@@ -386,10 +386,10 @@
 
     <footer class="page-footer">
       <div class="page-footer-container container">
-        <address class="page-address">
-          <div class="address-contact-container">
-            <a class="logo footer-logo link" href="./"><span>Web</span>Studio</a>
+        <div class="addresses-container">
+          <a class="logo footer-logo link" href="./"><span>Web</span>Studio</a>
 
+          <address>
             <ul class="addresses-list list">
               <li class="item">
                 <a
@@ -408,47 +408,46 @@
                 <a class="contact link" href="tel:+380961111111">+38 096 111 11 11</a>
               </li>
             </ul>
-          </div>
+          </address>
+        </div>
 
-          <div class="social-network-container">
-            <p class="call-to-action">Приєднуйтесь</p>
-
-            <ul class="icons-list list">
-              <li class="item">
-                <a class="social-network-link secondary" href="" aria-label="Instagram">
-                  <span class="visually-hidden">Instagram</span>
-                  <svg class="social-network-icon" width="20" height="20">
-                    <use href="./images/icons.svg#instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="social-network-link secondary" href="" aria-label="Twitter">
-                  <span class="visually-hidden">Twitter</span>
-                  <svg class="social-network-icon" width="20" height="20">
-                    <use href="./images/icons.svg#twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="social-network-link secondary" href="" aria-label="Facebook">
-                  <span class="visually-hidden">Facebook</span>
-                  <svg class="social-network-icon" width="20" height="20">
-                    <use href="./images/icons.svg#facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="social-network-link secondary" href="" aria-label="Linkedin">
-                  <span class="visually-hidden">Linkedin</span>
-                  <svg class="social-network-icon" width="20" height="20">
-                    <use href="./images/icons.svg#linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </address>
+        <div class="social-network-container">
+          <p class="call-to-action">Приєднуйтесь</p>
+          <ul class="icons-list list">
+            <li class="item">
+              <a class="social-network-link secondary" href="" aria-label="Instagram">
+                <span class="visually-hidden">Instagram</span>
+                <svg class="social-network-icon" width="20" height="20">
+                  <use href="./images/icons.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="item">
+              <a class="social-network-link secondary" href="" aria-label="Twitter">
+                <span class="visually-hidden">Twitter</span>
+                <svg class="social-network-icon" width="20" height="20">
+                  <use href="./images/icons.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="item">
+              <a class="social-network-link secondary" href="" aria-label="Facebook">
+                <span class="visually-hidden">Facebook</span>
+                <svg class="social-network-icon" width="20" height="20">
+                  <use href="./images/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="item">
+              <a class="social-network-link secondary" href="" aria-label="Linkedin">
+                <span class="visually-hidden">Linkedin</span>
+                <svg class="social-network-icon" width="20" height="20">
+                  <use href="./images/icons.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <div class="footer-form-container">
           <p class="call-to-action">Підпишіться на розсилку</p>
@@ -509,8 +508,8 @@
             placeholder="Введіть текст"
           ></textarea>
 
-          <label class="field-policy">
-            <input class="checkbox" type="checkbox" />
+          <label class="field-policy" id="checkbox">
+            <input class="checkbox" type="checkbox" id="checkbox" />
             <svg class="icon-checked" width="16" height="15">
               <use href="./images/icons.svg#checked"></use>
             </svg>
