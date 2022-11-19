@@ -820,7 +820,7 @@ p {
 }
 
 .checkbox:focus + .icon-checked {
-    border: 1.75px solid var(--accent-color);
+    outline: 2px solid var(--accent-color);
 }
 
 .policy {
