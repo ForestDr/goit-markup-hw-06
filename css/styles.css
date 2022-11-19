@@ -813,9 +813,14 @@ p {
     cursor: pointer;
 }
 
-.checkbox:checked + .icon-checked {
+.checkbox:checked + .icon-checked,
+.checkbox:checked:focus+.icon-checked {
     background-color: var(--accent-color);
     border: none;
+}
+
+.checkbox:focus + .icon-checked {
+    border: 1.75px solid var(--accent-color);
 }
 
 .policy {
